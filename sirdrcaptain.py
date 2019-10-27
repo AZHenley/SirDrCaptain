@@ -24,6 +24,10 @@ for mdFileName in os.listdir(mdFolderPath):
     pages[pageName] = (title, date, html) # Store all the info from the page.
 
 fo = open(templateFilePath)
+
+
+# Commands: @@@content@@@ @@@title@@@ @@@date@@@ @@@list ascending@@@ @@@list descending@@@
+
     
 
 #html = markdown.markdown("*austin*\n\n**henley**")
