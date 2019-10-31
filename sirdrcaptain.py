@@ -7,13 +7,20 @@ import markdown
 
 templateFilePath = "/Users/azh/Dropbox/SirDrCaptain/example/template.html"
 mdFolderPath = "/Users/azh/Dropbox/SirDrCaptain/example/posts"
+outputPath = "/Users/azh/Dropbox/SirDrCaptain/example/output/"
 pages = {}
 
+# Process the template.
+fo = open(templateFilePath)
+# TODO: Handle errors.
+template = fo.read()
+
+# Process each post.
 for mdFileName in os.listdir(mdFolderPath):
     if not mdFileName.endswith(".md"):  # Only read md files.
         continue
     fo = open(os.path.join(mdFolderPath, mdFileName))
-    # What if file does not have 3 lines?
+    # TODO: What if file does not have 3 lines?
     title = fo.readline().strip()
     date = fo.readline().strip()
     content = fo.read().strip()
@@ -22,6 +29,8 @@ for mdFileName in os.listdir(mdFolderPath):
     html = markdown.markdown(content) 
     pageName = mdFileName.rsplit('.', 1)[0]  # Remove file extension from file name.
     pages[pageName] = (title, date, html) # Store all the info from the page.
+
+    # Output!
 
 fo = open(templateFilePath)
 
