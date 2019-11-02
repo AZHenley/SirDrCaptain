@@ -41,8 +41,32 @@ for mdFileName in os.listdir(mdFolderPath):
     fo.write(output)
     fo.close()
 
+# Build table of contents.
+fo = open(tocFilePath, "r")
+tocTemplate = fo.read()
+fo.close()
+toc = []
+for page in pages:
+    tocEntry = tocTemplate.replace("@@@title@@@", pages[page][0])
+    tocEntry = tocEntry.replace("@@@date@@@", pages[page][1])
+    tocEntry = tocEntry.replace("@@@filename@@@", page + ".html")
+    # TODO: Sort! Either append or prepend.
+    toc.append(tocEntry)
+tocAscending = "".join(toc)
+toc.reverse()
+tocDescending = "".join(toc)
 
+# Process table of contents.
+for page in pages:
+    fo = open(os.path.join(outputPath, page + ".html"), "r")
+    content = fo.read()
+    fo.close()
 
+    content = content.replace("@@@list ascending@@@", tocAscending) 
+    content = content.replace("@@@list descending@@@", tocDescending)
+    fo = open(os.path.join(outputPath, page + ".html"), "w")
+    fo.write(content)
+    fo.close()
     
 
 #fo = open(templateFilePath)
