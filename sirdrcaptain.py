@@ -1,5 +1,6 @@
 import os
 import sys
+import datetime
 import markdown
 
 #if len(sys.argv)-1 != 4:
@@ -50,13 +51,14 @@ for page in pages:
     tocEntry = tocTemplate.replace("@@@title@@@", pages[page][0])
     tocEntry = tocEntry.replace("@@@date@@@", pages[page][1])
     tocEntry = tocEntry.replace("@@@filename@@@", page + ".html")
-    # TODO: Sort! Either append or prepend.
-    toc.append(tocEntry)
-tocAscending = "".join(toc)
+    # TODO: Sort!
+    toc.append((tocEntry, datetime.datetime.strptime(pages[page][1], "%m/%d/%Y").date()))
+toc.sort(key = lambda t: t[1]) # Sort by the dates
+tocAscending = "".join([t[0] for t in toc])
 toc.reverse()
-tocDescending = "".join(toc)
+tocDescending = "".join([t[0] for t in toc])
 
-# Process table of contents.
+# Output table of contents.
 for page in pages:
     fo = open(os.path.join(outputPath, page + ".html"), "r")
     content = fo.read()
@@ -69,19 +71,4 @@ for page in pages:
     fo.close()
     
 
-#fo = open(templateFilePath)
-
-
 # Commands: @@@content@@@ @@@title@@@ @@@date@@@ @@@filename@@@ @@@list ascending@@@ @@@list descending@@@
-
-    
-
-#html = markdown.markdown("*austin*\n\n**henley**")
-#print(html)
-
-# sirdrcaptain <template file> <dir of markdown files> <dir for output>
-
-# get template html file
-# get recursive folder of md files... title first line, date second line
-# replace %%%CONTENT%%%
-# replace %%%TOC%%%
