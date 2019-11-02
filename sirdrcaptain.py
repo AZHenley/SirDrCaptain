@@ -2,10 +2,11 @@ import os
 import sys
 import markdown
 
-#if len(sys.argv)-1 != 3:
-#    print("Invalid usage. Try: sirdrcaptain <html template> <markdown dir> <output dir>")
+#if len(sys.argv)-1 != 4:
+#    print("Invalid usage. Try: sirdrcaptain <html template> <toc template> <markdown dir> <output dir>")
 
 templateFilePath = "/Users/azh/Dropbox/SirDrCaptain/example/template.html"
+tocFilePath = "/Users/azh/Dropbox/SirDrCaptain/example/list.html"
 mdFolderPath = "/Users/azh/Dropbox/SirDrCaptain/example/posts"
 outputPath = "/Users/azh/Dropbox/SirDrCaptain/example/output/"
 pages = {}
@@ -14,6 +15,7 @@ pages = {}
 fo = open(templateFilePath)
 # TODO: Handle errors.
 template = fo.read()
+fo.close()
 
 # Process each post.
 for mdFileName in os.listdir(mdFolderPath):
@@ -31,11 +33,22 @@ for mdFileName in os.listdir(mdFolderPath):
     pages[pageName] = (title, date, html) # Store all the info from the page.
 
     # Output!
+    output = template.replace("@@@content@@@", html)
+    output = output.replace("@@@title@@@", title)
+    output = output.replace("@@@date@@@", date)
+    outout = output.replace("@@@filename@@@@", pageName + ".html")
+    fo = open(os.path.join(outputPath, pageName + ".html"), "w")
+    fo.write(output)
+    fo.close()
 
-fo = open(templateFilePath)
 
 
-# Commands: @@@content@@@ @@@title@@@ @@@date@@@ @@@list ascending@@@ @@@list descending@@@
+    
+
+#fo = open(templateFilePath)
+
+
+# Commands: @@@content@@@ @@@title@@@ @@@date@@@ @@@filename@@@ @@@list ascending@@@ @@@list descending@@@
 
     
 
