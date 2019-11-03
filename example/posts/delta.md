@@ -10,4 +10,6 @@ You should go to my [website](http://austinhenley.com). I write about:
  - Game design
  - Academia
 
- The end.
+Check out the SirDrCaptain [repo](https://github.com/AZHenley/SirDrCaptain) for more info about the static website generator that created this webpage.
+
+The end.

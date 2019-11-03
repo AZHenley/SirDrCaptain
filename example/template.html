@@ -1,18 +1,65 @@
-<html>
-    <head>
-        <title>@@@title@@@ - SirDrCaptain</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <h1>Example website for SirDrCaptain</h1>
-        
-        <p>Recent blog posts:</p>
-        <ul>
-            @@@list ascending@@@    
-        </ul>
 
-        <h2>@@@title@@@</h2>
-        <small>@@@date@@@</small><br><hr>
-        @@@content@@@
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SirDrCaptain Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1000px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-2 sidenav"><br><br>
+      <h4><small>Recent Posts</small></h4>
+      <ul>
+        @@@list descending@@@
+      </ul><br>
+    </div>
+
+    <div class="col-sm-9">
+      <h4>SirDrCaptain Example</h4>
+      <hr>
+      <h2>@@@title@@@</h2>
+      <h5>@@@date@@@</h5>
+      <br>
+      @@@content@@@
+
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid">
+  <p>Copyright Austin Z. Henley.</p>
+</footer>
+
+</body>
 </html>

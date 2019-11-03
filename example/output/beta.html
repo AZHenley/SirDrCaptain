@@ -1,22 +1,60 @@
-<html>
-    <head>
-        <title>Beta? - SirDrCaptain</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <h1>Example website for SirDrCaptain</h1>
-        
-        <p>Recent blog posts:</p>
-        <ul>
-            <li><a href="alpha.html">Alpha!</a> <small>(2/15/2019)</small></li>
-<li><a href="delta.html">Delta</a> <small>(10/3/2019)</small></li>
-<li><a href="beta.html">Beta?</a> <small>(6/1/2019)</small></li>
-    
-        </ul>
 
-        <h2>Beta?</h2>
-        <small>6/1/2019</small><br><hr>
-        <p>This is an example post <em>with</em> Markdown <strong>formatting</strong>.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SirDrCaptain Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1000px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-2 sidenav"><br><br>
+      <h4><small>Recent Posts</small></h4>
+      <ul>
+        <li><a href="delta.html">Delta</a> <small>(10/3/2019)</small></li>
+<li><a href="beta.html">Beta?</a> <small>(6/1/2019)</small></li>
+<li><a href="alpha.html">Alpha!</a> <small>(2/15/2019)</small></li>
+
+      </ul><br>
+    </div>
+
+    <div class="col-sm-9">
+      <h4>SirDrCaptain Example</h4>
+      <hr>
+      <h2>Beta?</h2>
+      <h5>6/1/2019</h5>
+      <br>
+      <p>This is an example post <em>with</em> Markdown <strong>formatting</strong>.</p>
 <p>You should go to my <a href="http://austinhenley.com">website</a>. I write about:</p>
 <ul>
 <li>Software engineering</li>
@@ -24,6 +62,16 @@
 <li>Game design</li>
 <li>Academia</li>
 </ul>
+<p>Check out the SirDrCaptain <a href="https://github.com/AZHenley/SirDrCaptain">repo</a> for more info about the static website generator that created this webpage.</p>
 <p>The end.</p>
-    </body>
+
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid">
+  <p>Copyright Austin Z. Henley.</p>
+</footer>
+
+</body>
 </html>
