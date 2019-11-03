@@ -11,7 +11,7 @@ The features include:
  
 You need an HTML file that will act as your template and a set of markdown files (one for each page). Then SirDrCaptain will convert the markdown to HTML and fill in each post's content, title, and date along with any lists of posts into the template by looking for annotations, such as `@@@content@@@`. You also need to provide another HTML file that will be used for each item in listings of posts (e.g., table of contents or recent posts in chronological order). This will often just be a line containing something like `<li>@@@title@@@</li>`.
  
-The [/example/](https://github.com/AZHenley/SirDrCaptain/tree/master/example) directory has an example of this.
+The [/example/](https://github.com/AZHenley/SirDrCaptain/tree/master/example) directory has an example all of the input and output files from SirDrCaptain.
  
 SirDrCaptain is a glorified *find-and-replace* tool, looking for:
  
