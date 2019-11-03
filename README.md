@@ -22,7 +22,9 @@ SirDrCaptain is a glorified *find-and-replace* tool, looking for:
  - @@@list ascending@@@ inserts a list of all posts in ascending order by date
  - @@@list decending@@@ inserts a list of all posts in decending order by date
   
-To run it: `sirdrcaptain <html template> <toc template> <markdown dir> <output dir>` 
+It is dependent on the [Python-Markdown](https://python-markdown.github.io/) package. To install, run: `pip install markdown`
+
+To run SirDrCaptain: `python sirdrcaptain.py <html template> <toc template> <markdown dir> <output dir>` 
   
 There are a number of assumptions that SirDrCaptain makes. Each markdown file must have the post title in the first line, the date in the second line, and the content is everything else. The dates are in %m/%d/%Y format. The ToC template can use the same @@@ annotations, except the list ones.
   
