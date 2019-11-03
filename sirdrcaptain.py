@@ -6,7 +6,7 @@
 #   Handle errors.
 #   Refactor code into functions.
 #   Generate RSS feed.
-#   Make ToC template (and eventually RSS template) optional.
+#   Make ToC template optional.
 
 import os
 import sys
@@ -14,7 +14,7 @@ import datetime
 import markdown
 
 if len(sys.argv)-1 != 4:
-    print("Invalid usage. Try: sirdrcaptain <html template> <toc template> <markdown dir> <output dir>")
+    print("Invalid usage. Try: python sirdrcaptain.py <html template> <toc template> <markdown dir> <output dir>")
     sys.exit(1)
 
 templateFilePath = sys.argv[1]
