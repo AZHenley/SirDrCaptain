@@ -31,4 +31,4 @@ There are a number of assumptions that SirDrCaptain makes. Each markdown file mu
  - Handle errors.
  - Refactor code.
  - Generate RSS feed.
- - Make ToC template (and eventually RSS template) optional.
+ - Make ToC template optional.
