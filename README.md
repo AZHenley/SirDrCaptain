@@ -1,6 +1,6 @@
 # SirDrCaptain
 
-SirDrCaptain is a very simple *static website generator* written in Python. I made it for my generating my [blog](http://web.eecs.utk.edu/~azh/blog.html) and even wrote a [tutorial](http://web.eecs.utk.edu/~azh/blog/staticwebsitegenerator.html) on making it.
+SirDrCaptain is a very simple *static website generator* written in Python. I made it for my generating my [blog](http://web.eecs.utk.edu/~azh/blog.html).
 
 The features include:
 
